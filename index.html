@@ -812,6 +812,57 @@
             </div>
         </footer>
 
+        <!-- Inline mobile menu toggle (fallback + accessibility) -->
+
+        <script>
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+
+            btn.addEventListener('click', () => {
+                const isOpen = !menu.classList.contains('hidden');
+
+                if (isOpen) {
+                    // Close menu
+                    menu.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+                    menu.classList.remove('opacity-100', 'pointer-events-auto');
+                    menu.setAttribute('aria-hidden', 'true');
+                    btn.setAttribute('aria-expanded', 'false');
+                    icon.textContent = 'menu';
+                } else {
+                    // Open menu
+                    menu.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+                    menu.classList.add('opacity-100', 'pointer-events-auto');
+                    menu.setAttribute('aria-hidden', 'false');
+                    btn.setAttribute('aria-expanded', 'true');
+                    icon.textContent = 'close';
+                }
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+                    menu.classList.remove('opacity-100', 'pointer-events-auto');
+                    menu.setAttribute('aria-hidden', 'true');
+                    btn.setAttribute('aria-expanded', 'false');
+                    icon.textContent = 'menu';
+                });
+            });
+
+            // Close menu with Escape key
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') {
+                    menu.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+                    menu.classList.remove('opacity-100', 'pointer-events-auto');
+                    menu.setAttribute('aria-hidden', 'true');
+                    btn.setAttribute('aria-expanded', 'false');
+                    icon.textContent = 'menu';
+                }
+            });
+        </script>
+
+
         <!-- Chatbot -->
         <div id="chatbot-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
             <!-- Chat toggle button -->
@@ -951,55 +1002,6 @@
             document.getElementById('chatbot-close')?.addEventListener('touchstart', chatbotCloseInline, { passive: false });
             document.getElementById('chatbot-send')?.addEventListener('click', chatbotSendInline);
             document.getElementById('chatbot-form')?.addEventListener('submit', chatbotSendInline);
-        </script>
-
-        <!-- Inline mobile menu toggle (fallback + accessibility) -->
-        <script>
-            (function () {
-                function toggleMobileMenu(e) {
-                    if (e && e.type === 'touchstart') e.preventDefault();
-                    const menu = document.getElementById('mobile-menu');
-                    const btn = document.getElementById('mobile-menu-btn');
-                    const icon = document.getElementById('mobile-menu-icon');
-                    if (!menu || !btn) return;
-                    const isOpen = menu.classList.contains('opacity-100') && !menu.classList.contains('opacity-0');
-                    if (isOpen) {
-                        menu.classList.add('opacity-0', 'pointer-events-none');
-                        menu.classList.remove('opacity-100', 'pointer-events-auto', 'open');
-                        menu.setAttribute('aria-hidden', 'true');
-                        btn.setAttribute('aria-expanded', 'false');
-                        if (icon) icon.textContent = 'menu';
-                    } else {
-                        menu.classList.remove('opacity-0', 'pointer-events-none');
-                        menu.classList.add('opacity-100', 'pointer-events-auto', 'open');
-                        menu.setAttribute('aria-hidden', 'false');
-                        btn.setAttribute('aria-expanded', 'true');
-                        if (icon) icon.textContent = 'close';
-                    }
-                }
-
-                function closeMobileMenu() {
-                    const menu = document.getElementById('mobile-menu');
-                    const btn = document.getElementById('mobile-menu-btn');
-                    const icon = document.getElementById('mobile-menu-icon');
-                    if (!menu || !btn) return;
-                    menu.classList.add('opacity-0', 'pointer-events-none');
-                    menu.classList.remove('opacity-100', 'pointer-events-auto', 'open');
-                    menu.setAttribute('aria-hidden', 'true');
-                    btn.setAttribute('aria-expanded', 'false');
-                    if (icon) icon.textContent = 'menu';
-                }
-
-                document.getElementById('mobile-menu-btn')?.addEventListener('click', toggleMobileMenu);
-                document.getElementById('mobile-menu-btn')?.addEventListener('touchstart', toggleMobileMenu, { passive: false });
-
-                document.querySelectorAll('.mobile-nav-link').forEach(el => {
-                    el.addEventListener('click', () => closeMobileMenu());
-                    el.addEventListener('touchstart', (e) => { e.preventDefault(); closeMobileMenu(); }, { passive: false });
-                });
-
-                document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
-            })();
         </script>
 
         <script src="main.js"></script>
