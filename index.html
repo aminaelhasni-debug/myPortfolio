@@ -1,0 +1,1008 @@
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description"
+        content="Amina El hasni, a Full Stack Developer specializing in high-performance, SEO-optimized websites and skilled in AI Career Essentials to effectively leverage AI tools in web development workflows." />
+    <title>Amina El hasni | Full Stack Developer | SEO & AI Career Essentials</title>
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Material Symbols -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Lenis Smooth Scroll -->
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#BFA2DB",     // Lavender
+                        "secondary": "#F5C7E0",   // Blush Pink
+                        "background-light": "##f4f4f5",
+                        "background-dark": "#0a1f44",
+                        "surface-dark": "#1e293b",
+                    },
+
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="text-white font-body overflow-x-hidden selection:bg-primary selection:text-background-dark"
+    style="background: #0a1f44;">
+
+    <!-- Ambient Background Effects -->
+
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div
+            class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-30">
+        </div>
+        <div
+            class="absolute bottom-[10%] right-[-5%] w-[600px] h-[600px] bg-secondary/20 rounded-full blur-[120px] opacity-20">
+        </div>
+    </div>
+
+    <!-- Canvas Liquid Background (fixed behind content) -->
+
+    <canvas id="liquid-canvas" class="fixed inset-0 w-full h-full z-0 pointer-events-none"></canvas>
+
+    <div class="relative z-10 flex flex-col min-h-screen">
+
+        <!-- Navbar -->
+
+        <header id="header" class="relative w-full z-50 glass-nav">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+                <!-- Logo -->
+
+                <a href="#home" class="flex items-center gap-2">
+                    <div class="size-10 flex items-center justify-center bg-white/5 rounded-xl border border-white/10">
+                        <span class="material-symbols-outlined text-primary">code</span>
+                    </div>
+                    <span class="font-display font-bold text-xl">
+                        Amina <span class="text-primary"> El Hasni</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="text-sm font-medium text-slate-300 hover:text-white transition">About</a>
+                    <a href="#projects"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition">Projects</a>
+                    <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-white transition">Skills</a>
+                    <a href="#contact"
+                        class="text-sm font-medium text-slate-300 hover:text-white transition">Contact</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+
+                <a href="#contact"
+                    class="hidden sm:inline-flex items-center h-10 px-6 rounded-lg bg-primary text-background-dark font-bold">
+                    Start a Project
+                </a>
+
+                <!-- Mobile Hamburger Button (removed from header to avoid stacking issues) -->
+            </div>
+
+            <!-- Mobile Menu -->
+
+            <div id="mobile-menu" class="mobile-menu fixed top-20 inset-x-0 bottom-0 z-50 bg-background-dark/95 backdrop-blur-xl border-t border-white/10 
+           md:hidden opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true">
+                <nav class="flex flex-col p-6 gap-4 h-full">
+                    <a href="#about"
+                        class="mobile-nav-link text-lg font-medium text-slate-300 hover:text-white py-3 border-b border-white/5">About</a>
+                    <a href="#projects"
+                        class="mobile-nav-link text-lg font-medium text-slate-300 hover:text-white py-3 border-b border-white/5">Projects</a>
+                    <a href="#skills"
+                        class="mobile-nav-link text-lg font-medium text-slate-300 hover:text-white py-3 border-b border-white/5">Skills</a>
+                    <a href="#contact"
+                        class="mobile-nav-link text-lg font-medium text-slate-300 hover:text-white py-3 border-b border-white/5">Contact</a>
+                    <a href="#contact"
+                        class="mobile-nav-link mt-4 flex items-center justify-center h-12 rounded-lg bg-primary text-background-dark font-bold">
+                        Start a Project
+                    </a>
+
+                </nav>
+            </div>
+        </header>
+
+        <!-- Mobile Hamburger Button (fixed, only on small screens) -->
+        <button id="mobile-menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu"
+            class="fixed top-6 right-6 z-50 md:hidden bg-white/5 text-white p-3 rounded-full border border-white/10 shadow-lg focus:outline-none"
+            style="z-index: 9999;">
+            <span id="mobile-menu-icon" class="material-symbols-outlined">menu</span>
+        </button>
+
+        <!-- Hero Section -->
+
+        <section id="home" class="min-h-screen flex items-center justify-center relative">
+            <div class="max-w-7xl w-full mx-auto px-6 py-12">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <!-- Left Content -->
+                    <div class="flex flex-col gap-8 max-w-2xl fade-in-up">
+                        <!-- Role Badge -->
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 w-fit backdrop-blur-sm">
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                            </span>
+                            <span class="text-xs font-semibold tracking-wide text-slate-300 uppercase">Let’s Build
+                                Something Together</span>
+                        </div>
+
+                        <!-- Headlines -->
+
+                        <div class="space-y-4">
+                            <h1
+                                class="font-display font-bold text-5xl sm:text-6xl md:text-7xl leading-[1.1] tracking-tight">
+                                <span class="text-gradient">Code, Optimize,</span><br>
+                                <span class="text-primary text-6xl md:text-7xl">Deliver.</span>
+                            </h1>
+
+
+                            <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-lg">
+                                I'm <strong class="text-white font-medium">Amina Elhasni</strong>, a Full Stack
+                                Developer building
+                                accessible, high-performance websites. Skilled in SEO and <strong>AI Career
+                                    Essentials</strong>, I
+                                effectively use AI tools to improve workflows and web development productivity.
+                            </p>
+
+                        </div>
+
+                        <!-- CTA Buttons -->
+
+                        <div class="flex flex-wrap items-center gap-4">
+                            <a href="#projects" id="view-projects-btn"
+                                class="flex items-center gap-2 h-12 px-8 rounded-full bg-primary text-background-dark font-bold text-base hover:bg-white transition-all transform hover:scale-105 glow-effect">
+                                View Projects
+                                <span class="material-symbols-outlined text-sm font-bold">arrow_outward</span>
+                            </a>
+                            <a href="#contact" id="contact-me-btn"
+                                class="flex items-center gap-2 h-12 px-8 rounded-full border border-white/20 text-white font-medium hover:bg-white/5 hover:border-white/40 transition-all">
+                                Contact Me
+                            </a>
+                        </div>
+
+                        <!-- Stats Strip -->
+
+                        <div class="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-white/5">
+                            <div class="flex flex-col gap-1">
+                                <span class="font-display text-3xl font-bold text-white"></span>
+                                <span class="text-sm text-slate-500"></span>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="font-display text-3xl font-bold text-white"></span>
+                                <span class="text-sm text-slate-500"></span>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="font-display text-3xl font-bold text-white"></span>
+                                <span class="text-sm text-slate-500"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual -->
+
+                    <div class="relative w-full h-full flex justify-center lg:justify-end fade-in-up">
+
+                        <!-- Abstract Card Container -->
+
+                        <div
+                            class="relative w-full max-w-md aspect-[4/5] md:aspect-square lg:aspect-[4/5] animate-float">
+
+                            <!-- Main Glass Card -->
+
+                            <div
+                                class="hero-card-main absolute inset-0 z-20 glass rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
+
+                                <!-- Image -->
+
+                                <div class="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden">
+                                    <div class="absolute inset-0 bg-center bg-contain bg-no-repeat"
+                                        style="background-image: url('Amina.jpeg');">
+                                    </div>
+                                </div>
+
+
+
+
+                                <!-- Overlay Gradient -->
+
+                                <div
+                                    class="hero-card-overlay absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
+                                </div>
+
+                                <!-- Floating UI Element inside image -->
+
+                                <div
+                                    class="hero-card-ui absolute bottom-6 left-6 right-6 p-4 glass rounded-xl border border-white/10 flex items-center gap-4 cursor-pointer">
+                                    <div
+                                        class="hero-card-ui-icon size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
+                                        <span class="material-symbols-outlined">handshake</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-white">Open to Collaboration</p>
+                                        <p class="text-xs text-slate-400">Freelance · Remote · Part-time</p>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <span
+                                            class="hero-card-ui-arrow material-symbols-outlined text-slate-400">arrow_forward</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Decorative Elements Behind -->
+
+                            <div
+                                class="hero-card-decorative-border absolute -top-4 -right-4 w-full h-full rounded-3xl border border-primary/30 z-10">
+                            </div>
+                            <div
+                                class="hero-card-blur absolute -bottom-4 -left-4 w-full h-full rounded-3xl bg-white/5 z-0 blur-sm">
+                            </div>
+
+                            <!-- Floating Icon 1 -->
+
+                            <div
+                                class="absolute -right-8 top-12 z-30 p-3 bg-surface-dark rounded-xl border border-white/10 shadow-lg animate-bounce duration-[3000ms]">
+                                <img alt="React Logo" class="size-8" data-alt="React JS framework logo icon"
+                                    src="code icon.jpg" />
+                            </div>
+
+                            <!-- Floating Icon 2 -->
+
+                            <div
+                                class="absolute -left-6 bottom-32 z-30 p-3 bg-surface-dark rounded-xl border border-white/10 shadow-lg animate-bounce duration-[4000ms]">
+                                <img alt="Tailwind Logo" class="size-8" data-alt="Tailwind CSS framework logo icon"
+                                    src="code image.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll Indicator -->
+
+                <div
+                    class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-50 animate-bounce">
+                    <span class="text-xs font-medium uppercase tracking-widest text-slate-500">Scroll</span>
+                    <span class="material-symbols-outlined text-slate-500">keyboard_arrow_down</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+
+        <section id="about" class="section-padding relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="fade-in-up">
+                        <h2 class="font-display font-bold text-4xl md:text-5xl mb-6">
+                            About <span class="text-primary">Me</span>
+                        </h2>
+                        <section id="about"
+                            class="py-16 bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-100">
+                            <div class="container mx-auto px-4">
+                                <h2 class="text-3xl font-bold mb-6">About Me</h2>
+                                <p class="mb-4 leading-relaxed">
+                                    Hello! I'm <strong>Amina Elhasni</strong>, a passionate Full Stack Developer
+                                    dedicated to creating modern, accessible, and high-performance web applications. I
+                                    specialize in building <strong>SEO-optimized websites</strong> that not only look
+                                    great but also drive traffic and engagement.
+                                </p>
+                                <p class="mb-4 leading-relaxed">
+                                    I’m also skilled in <strong>AI Career Essentials</strong>, enabling me to
+                                    effectively leverage AI tools and workflows to enhance development processes,
+                                    improve productivity, and deliver smarter web solutions.
+                                </p>
+                                <p class="leading-relaxed">
+                                    Whether it’s collaborating on a new project, optimizing an existing website, or
+                                    exploring innovative ways to integrate AI tools, I’m always excited to take on
+                                    challenges and help businesses grow online.
+                                </p>
+                            </div>
+                        </section>
+
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="#contact"
+                                class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-background-dark font-semibold hover:bg-white transition-colors">
+                                Get In Touch
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                            <a href="#projects"
+                                class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white/5 transition-colors">
+                                View My Work
+                            </a>
+                        </div>
+                    </div>
+                    <div class="fade-in-up">
+                        <div class="relative">
+                            <div class="glass rounded-3xl p-8 space-y-6">
+
+                                <!-- Full Stack Development -->
+
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-16 rounded-xl bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
+                                        <span class="material-symbols-outlined text-3xl">code</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-display font-bold text-xl">Full Stack Development</h3>
+                                        <p class="text-slate-400 text-sm">End-to-end solutions</p>
+                                    </div>
+                                </div>
+
+                                <!-- UI/UX Design -->
+
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-16 rounded-xl bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
+                                        <span class="material-symbols-outlined text-3xl">palette</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-display font-bold text-xl">UI/UX Design</h3>
+                                        <p class="text-slate-400 text-sm">User-centered design</p>
+                                    </div>
+                                </div>
+
+                                <!-- Performance Optimization -->
+
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-16 rounded-xl bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
+                                        <span class="material-symbols-outlined text-3xl">speed</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-display font-bold text-xl">SEO & Performance</h3>
+                                        <p class="text-slate-400 text-sm">Fast, efficient, and search-optimized websites
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- AI Career Essentials -->
+
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-16 rounded-xl bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
+                                        <span class="material-symbols-outlined text-3xl">smart_toy</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-display font-bold text-xl">AI Career Essentials</h3>
+                                        <p class="text-slate-400 text-sm">Practical AI skills to improve workflows</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+
+        <section id="skills" class="section-padding relative bg-surface-dark/30">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="font-display font-bold text-4xl md:text-5xl mb-4 mt-4">
+                        My <span class="text-primary">Skills</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                        The tools and frameworks I rely on to turn ideas into reality.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Frontend Skills -->
+
+                    <div class="glass rounded-2xl p-6 fade-in-up">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
+                                <span class="material-symbols-outlined">web</span>
+                            </div>
+                            <h3 class="font-display font-bold text-xl">Frontend</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">⚛️ React</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">🟢 Vue.js</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">🔷 TypeScript</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">🎨 Tailwind CSS</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">▲ Next.js</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 87%"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Backend Skills -->
+
+                    <div class="glass rounded-2xl p-6 fade-in-up">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
+                                <span class="material-symbols-outlined">storage</span>
+                            </div>
+                            <h3 class="font-display font-bold text-xl">Backend</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">🟢 Node.js</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">🚀 Express</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">🐘 PostgreSQL (learning / basic queries)</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 82%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">🍃 MongoDB (local & Atlas)</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">🔗 GraphQL (basic)</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Others -->
+
+                    <div class="glass rounded-2xl p-6 fade-in-up">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
+                                <span class="material-symbols-outlined">build</span>
+                            </div>
+                            <h3 class="font-display font-bold text-xl">Tools & Others</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">🗂️ Git</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">📦 npm / yarn</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">☁️ Web Deployment</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">🎨 Figma</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <span class="text-sm font-medium">📦 Webpack</span>
+                                <div class="progress">
+                                    <div class="progress-fill" style="width: 78%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+
+        <section id="projects" class="section-padding relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="font-display font-bold text-4xl md:text-5xl mb-4 mt-4">
+                        Featured <span class="text-primary">Projects</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                        A selection of my recent work showcasing my skills and expertise
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Project 1 -->
+
+                    <div class="project-card glass rounded-2xl overflow-hidden fade-in-up">
+                        <div class="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-6xl text-primary/50">dashboard</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="font-display font-bold text-xl">Portfolio Website</h3>
+                                <a href="#" class="text-primary hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined">arrow_outward</span>
+                                </a>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-4">
+                                A fully responsive and professional portfolio website that can be built for clients to
+                                showcase their skills, projects, and services. Includes modern design, interactive
+                                components, and deployment-ready setup. </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-lg bg-white/5 text-xs text-slate-300">React/
+                                    Next.js</span>
+                                <span class="px-3 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Tailwind CSS</span>
+                                <span class="px-3 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Web
+                                    Deployment</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-card glass rounded-2xl overflow-hidden fade-in-up">
+                        <div class="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-6xl text-primary/50">shopping_cart</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="font-display font-bold text-xl">E-Commerce Platform</h3>
+                                <a href="#" class="text-primary hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined">arrow_outward</span>
+                                </a>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-4">
+                                A responsive and user-friendly e-commerce website template suitable for small businesses
+                                or clients. Features product listings, shopping cart functionality, and optional payment
+                                integration. Can be built with modern frontend tools and deployed online for live use.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-lg bg-white/5 text-xs text-slate-300">React /
+                                    Next.js</span>
+                                <span class="px-3 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Node.js /
+                                    Express</span>
+                                <span class="px-3 py-1 rounded-lg bg-white/5 text-xs text-slate-300">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+
+                    <div class="project-card glass rounded-2xl overflow-hidden fade-in-up">
+                        <div class="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-6xl text-primary/50">chat</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="font-display font-bold text-xl">Real-time Chat App</h3>
+                                <a href="#" class="text-primary hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined">arrow_outward</span>
+                                </a>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-4">
+                                A simple and responsive messaging application template that can be built for clients.
+                                Allows users to send messages in real-time, with optional file sharing. Messages can be
+                                stored in a database or forwarded to Google Sheets/WhatsApp for notifications. Ideal for
+                                websites that need a client contact system or internal messaging feature. </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Vue.js/React</span>
+                                <span
+                                    class="px-3 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Node.js/Express</span>
+                                <span class="px-3 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Google Sheets API /
+                                    Twilio for notifications</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+
+        <section id="contact" class="section-padding relative bg-surface-dark/30">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-12 fade-in-up">
+                    <h2 class="font-display font-bold text-4xl md:text-5xl mb-4 mt-4">
+                        Get <span class="text-primary">in Touch</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                        Have a vision? Let’s work together to make it a reality. Message me and let’s get started.
+                    </p>
+                </div>
+                <div class="glass rounded-3xl p-8 md:p-12 fade-in-up">
+                    <form class="space-y-6" id="contact-form">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                    placeholder="Your name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                    placeholder="your.email@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-slate-300 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required
+                                class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                placeholder="What's this about?">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="6" required
+                                class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full md:w-auto px-8 py-3 rounded-lg bg-primary text-background-dark font-bold text-base hover:bg-white transition-all transform hover:scale-105 glow-effect">
+                            Send Message
+                            <span class="material-symbols-outlined inline-block ml-2 align-middle">send</span>
+                        </button>
+                    </form>
+                </div>
+
+                <script>
+                    // Make sure script is **after the form**
+                    const contactForm = document.getElementById("contact-form");
+
+                    contactForm.addEventListener("submit", function (e) {
+                        e.preventDefault(); // prevent default form submit
+
+                        // Get values
+                        const name = document.getElementById("name").value.trim();
+                        const email = document.getElementById("email").value.trim();
+                        const subject = document.getElementById("subject").value.trim();
+                        const message = document.getElementById("message").value.trim();
+
+                        // Debug: check if values are captured
+                        console.log("Name:", name);
+                        console.log("Email:", email);
+                        console.log("Subject:", subject);
+                        console.log("Message:", message);
+
+                        // Optional: Stop if fields empty
+                        if (!name || !email || !subject || !message) {
+                            alert("Please fill in all fields!");
+                            return;
+                        }
+
+                        // Google Form URL
+                        const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSd4CxBs0M9LiKMQetMBJaKv8Ck0D69YbOToSTebGe1MvOSJKA/formResponse";
+
+                        // Map fields to Google Form entry IDs
+                        const formData = new FormData();
+                        formData.append("entry.670382032", name);
+                        formData.append("entry.717707765", email);
+                        formData.append("entry.417556270", subject);
+                        formData.append("entry.1573377801", message);
+
+                        // Send to Google Form
+                        fetch(formURL, { method: "POST", mode: "no-cors", body: formData })
+                            .then(() => console.log("✅ Data sent to Google Form"))
+                            .catch(err => console.error("❌ Error sending to Google Form:", err));
+
+                        // Send WhatsApp
+                        const whatsappMsg = `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+                        window.open(`https://wa.me/+212681439618?text=${encodeURIComponent(whatsappMsg)}`, "_blank");
+
+                        contactForm.reset();
+                        alert("✅ Message sent successfully!");
+                    });
+                </script>
+                <!-- Social Links -->
+                <div class="mt-12 flex justify-center gap-6 fade-in-up">
+                    <!-- GitHub -->
+                    <a href="https://github.com/aminaelhasni-debug" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub Profile"
+                        class="size-12 rounded-lg glass flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/50 transition-all border border-white/10">
+                        <span class="material-symbols-outlined">code</span>
+                    </a>
+
+                    <!-- Live Portfolio -->
+                    <a href="#" aria-label="Live Portfolio"
+                        class="size-12 rounded-lg glass flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/50 transition-all border border-white/10">
+                        <span class="material-symbols-outlined">link</span>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:aminaelhasni17@gmail.com" aria-label="Email Amina"
+                        class="size-12 rounded-lg glass flex items-center justify-center text-slate-300 hover:text-primary hover:border-primary/50 transition-all border border-white/10">
+                        <span class="material-symbols-outlined">mail</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-white/10 py-8">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">code</span>
+                        <span class="font-display font-bold text-lg">Amina<span class="text-primary">-El
+                                hasni</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm">
+                        © <span id="current-year"></span> Amina El hasni. All rights reserved.
+                        <script>
+                            document.getElementById("current-year").textContent = new Date().getFullYear();
+                        </script>
+                    </p>
+                    <p class="text-sm text-slate-400 text-center">
+                        Made with <span class="text-primary font-semibold">care</span>, crafted with <span
+                            class="text-primary font-semibold">skill</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Chatbot -->
+        <div id="chatbot-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+            <!-- Chat toggle button -->
+            <button id="chatbot-toggle"
+                class="bg-primary text-background-dark p-4 rounded-full shadow-lg hover:bg-primary/80 transition">
+                <span class="material-symbols-outlined">chat</span>
+            </button>
+
+            <!-- Chat window -->
+            <div id="chatbot-window"
+                class="hidden w-81 h-[500px] bg-gradient-to-b from-background-dark/95 to-background-dark/80 text-white rounded-2xl shadow-2xl mt-4 flex flex-col overflow-hidden border-2 border-primary/30 backdrop-blur-md">
+
+                <!-- Header -->
+                <div
+                    class="bg-gradient-to-r from-primary/80 to-primary/50 p-4 flex justify-between items-center rounded-t-2xl shadow-inner">
+                    <span class="font-bold text-lg tracking-wide">💬 Chat with Amina</span>
+                    <button id="chatbot-close"
+                        class="text-background-dark font-bold hover:text-white hover:scale-110 transition-transform duration-200">✖</button>
+                </div>
+
+                <!-- Messages area -->
+                <div id="chatbot-messages"
+                    class="flex-1 p-4 overflow-y-auto space-y-3 scrollbar-thin scrollbar-thumb-primary/50 scrollbar-track-transparent">
+                    <div class="text-sm text-slate-400 animate-fade-in">Hi! I'm Amina's assistant 🤖. Ask me anything
+                        about my work or skills!</div>
+                </div>
+
+                <!-- Input area -->
+                <form id="chatbot-form"
+                    class="p-4 border-t border-white/20 flex gap-2 items-center bg-background-dark/70 backdrop-blur-sm">
+                    <input id="chatbot-input" type="text" placeholder="Type a message..."
+                        class="flex-1 px-3 py-3 rounded-xl bg-background-dark/50 border border-white/10 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition" />
+                    <button type="submit"
+                        class="flex-shrink-0 bg-primary px-4 py-3 rounded-xl hover:bg-primary/80 shadow-lg transition transform hover:scale-105">
+                        Send
+                    </button>
+                </form>
+
+                <!-- Fun animated background element -->
+                <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+                    <div class="absolute w-32 h-32 bg-primary/10 rounded-full -top-10 -left-10 animate-pulse-slow">
+                    </div>
+                    <div class="absolute w-20 h-20 bg-primary/20 rounded-full -bottom-10 -right-10 animate-ping-slow">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            // Inline fallback for chatbot to ensure toggle works if main.js doesn't initialize
+            function chatbotToggleInline(e) {
+                if (e && e.type === 'touchstart') e.preventDefault();
+                const win = document.getElementById('chatbot-window');
+                const btn = document.getElementById('chatbot-toggle');
+                const input = document.getElementById('chatbot-input');
+                if (!win || !btn) return;
+                const isOpen = !win.classList.contains('hidden');
+                if (isOpen) {
+                    win.classList.add('hidden');
+                    win.setAttribute('aria-hidden', 'true');
+                    btn.setAttribute('aria-expanded', 'false');
+                } else {
+                    win.classList.remove('hidden');
+                    win.setAttribute('aria-hidden', 'false');
+                    btn.setAttribute('aria-expanded', 'true');
+                    input?.focus();
+                }
+            }
+
+            // Close chat inline
+            function chatbotCloseInline(e) {
+                if (e && e.type === 'touchstart') e.preventDefault();
+                const win = document.getElementById('chatbot-window');
+                const btn = document.getElementById('chatbot-toggle');
+                if (!win || !btn) return;
+                win.classList.add('hidden');
+                win.setAttribute('aria-hidden', 'true');
+                btn.setAttribute('aria-expanded', 'false');
+                btn.focus();
+            }
+
+            // Simple inline send handler (mirrors main.js behavior minimally)
+            function chatbotSendInline(e) {
+                e.preventDefault();
+
+                const input = document.getElementById('chatbot-input');
+                const msgs = document.getElementById('chatbot-messages');
+                if (!input || !msgs) return;
+
+                const text = input.value.trim().toLowerCase();
+                if (!text) return;
+
+                // Show user's message
+                const user = document.createElement('div');
+                user.className = 'text-right text-white mb-2';
+                user.textContent = input.value;
+                msgs.appendChild(user);
+
+                input.value = '';
+                msgs.scrollTop = msgs.scrollHeight;
+
+                // Define possible responses
+                const responses = {
+                    "hello": "Hi there! 👋",
+                    "hi": "Hello! How can I help you today?",
+                    "projects": "You can check my projects in the Projects section above.",
+                    "skills": "I specialize in Full Stack development, SEO, and AI tools!",
+                    "contact": "You can contact me via email: aminaelhasni17@gmail.com",
+                    "default": "Sorry, I didn't understand that. Try asking about my skills, projects, or contact."
+                };
+
+                // Find matching response
+                let reply = responses["default"];
+                for (let key in responses) {
+                    if (text.includes(key)) {
+                        reply = responses[key];
+                        break;
+                    }
+                }
+
+                // Show bot's response
+                setTimeout(() => {
+                    const bot = document.createElement('div');
+                    bot.className = 'text-left text-slate-300 mb-2';
+                    bot.textContent = reply;
+                    msgs.appendChild(bot);
+                    msgs.scrollTop = msgs.scrollHeight;
+                }, 600);
+            }
+
+
+            // Attach inline handlers (safe no-op if elements missing)
+            document.getElementById('chatbot-toggle')?.addEventListener('click', chatbotToggleInline);
+            document.getElementById('chatbot-toggle')?.addEventListener('touchstart', chatbotToggleInline, { passive: false });
+            document.getElementById('chatbot-close')?.addEventListener('click', chatbotCloseInline);
+            document.getElementById('chatbot-close')?.addEventListener('touchstart', chatbotCloseInline, { passive: false });
+            document.getElementById('chatbot-send')?.addEventListener('click', chatbotSendInline);
+            document.getElementById('chatbot-form')?.addEventListener('submit', chatbotSendInline);
+        </script>
+
+        <!-- Inline mobile menu toggle (fallback + accessibility) -->
+        <script>
+            (function () {
+                function toggleMobileMenu(e) {
+                    if (e && e.type === 'touchstart') e.preventDefault();
+                    const menu = document.getElementById('mobile-menu');
+                    const btn = document.getElementById('mobile-menu-btn');
+                    const icon = document.getElementById('mobile-menu-icon');
+                    if (!menu || !btn) return;
+                    const isOpen = menu.classList.contains('opacity-100') && !menu.classList.contains('opacity-0');
+                    if (isOpen) {
+                        menu.classList.add('opacity-0', 'pointer-events-none');
+                        menu.classList.remove('opacity-100', 'pointer-events-auto', 'open');
+                        menu.setAttribute('aria-hidden', 'true');
+                        btn.setAttribute('aria-expanded', 'false');
+                        if (icon) icon.textContent = 'menu';
+                    } else {
+                        menu.classList.remove('opacity-0', 'pointer-events-none');
+                        menu.classList.add('opacity-100', 'pointer-events-auto', 'open');
+                        menu.setAttribute('aria-hidden', 'false');
+                        btn.setAttribute('aria-expanded', 'true');
+                        if (icon) icon.textContent = 'close';
+                    }
+                }
+
+                function closeMobileMenu() {
+                    const menu = document.getElementById('mobile-menu');
+                    const btn = document.getElementById('mobile-menu-btn');
+                    const icon = document.getElementById('mobile-menu-icon');
+                    if (!menu || !btn) return;
+                    menu.classList.add('opacity-0', 'pointer-events-none');
+                    menu.classList.remove('opacity-100', 'pointer-events-auto', 'open');
+                    menu.setAttribute('aria-hidden', 'true');
+                    btn.setAttribute('aria-expanded', 'false');
+                    if (icon) icon.textContent = 'menu';
+                }
+
+                document.getElementById('mobile-menu-btn')?.addEventListener('click', toggleMobileMenu);
+                document.getElementById('mobile-menu-btn')?.addEventListener('touchstart', toggleMobileMenu, { passive: false });
+
+                document.querySelectorAll('.mobile-nav-link').forEach(el => {
+                    el.addEventListener('click', () => closeMobileMenu());
+                    el.addEventListener('touchstart', (e) => { e.preventDefault(); closeMobileMenu(); }, { passive: false });
+                });
+
+                document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+            })();
+        </script>
+
+        <script src="main.js"></script>
+</body>
+
+</html>
