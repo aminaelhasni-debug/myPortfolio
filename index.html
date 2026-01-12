@@ -64,7 +64,7 @@
     <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 
-<body class="text-white font-body overflow-x-hidden selection:bg-primary selection:text-background-dark"
+<body class="text-white font-body overflow-x-hidden selection:bg-primary selection:text-background-dark no-select"
     style="background: #0a1f44;">
 
     <!-- Ambient Background Effects -->
@@ -265,8 +265,8 @@
                                         <p class="text-xs text-slate-400">Freelance · Remote · Part-time</p>
                                     </div>
                                     <div class="ml-auto">
-                                        <span
-                                            class="hero-card-ui-arrow material-symbols-outlined text-slate-400">arrow_forward</span>
+                                        <a href="#contact"
+                                            class="hero-card-ui-arrow material-symbols-outlined text-slate-400">arrow_forward</a>
                                     </div>
                                 </div>
                             </div>
@@ -301,9 +301,9 @@
 
                 <!-- Scroll Indicator -->
 
-                <div
-                    class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-50 animate-bounce">
-                    <span class="text-xs font-medium uppercase tracking-widest text-slate-500">Scroll</span>
+                <div style="bottom: 8em;"
+                    class="absolute left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-50 animate-bounce">
+                    <a href="#about" class="text-xs font-medium uppercase tracking-widest text-slate-500">Scroll</a>
                     <span class="material-symbols-outlined text-slate-500">keyboard_arrow_down</span>
                 </div>
             </div>
@@ -586,8 +586,12 @@
 
                     <div class="project-card glass rounded-2xl overflow-hidden fade-in-up">
                         <div class="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-6xl text-primary/50">dashboard</span>
+                            <div class="absolute inset-0 bg-center bg-contain bg-no-repeat"
+                                style="background-image: url('./portfolioImage.png'); background-position: center 70%;">
+                            </div>
+                            <!-- Overlay Gradient -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
                             </div>
                         </div>
                         <div class="p-6">
@@ -613,8 +617,12 @@
                     <!-- Project 2 -->
                     <div class="project-card glass rounded-2xl overflow-hidden fade-in-up">
                         <div class="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-6xl text-primary/50">shopping_cart</span>
+                            <div class="absolute inset-0 bg-center bg-contain bg-no-repeat"
+                                style="background-image: url('./Ewebsiteimage.png'); background-position: center 70%;">
+                            </div>
+                            <!-- Overlay Gradient -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
                             </div>
                         </div>
                         <div class="p-6">
@@ -643,8 +651,12 @@
 
                     <div class="project-card glass rounded-2xl overflow-hidden fade-in-up">
                         <div class="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-6xl text-primary/50">chat</span>
+                            <div class="absolute inset-0 bg-center bg-contain bg-no-repeat"
+                                style="background-image: url('./realchaat.png'); background-position: center 70%;">
+                            </div>
+                            <!-- Overlay Gradient -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
                             </div>
                         </div>
                         <div class="p-6">

@@ -1,6 +1,12 @@
 html {
             scroll-behavior: smooth;
         }
+ body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
         .glass {
             background: rgba(255, 255, 255, 0.03);

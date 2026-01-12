@@ -1,4 +1,6 @@
-
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
 
         // Intersection Observer for fade-in animations
         const observerOptions = {
