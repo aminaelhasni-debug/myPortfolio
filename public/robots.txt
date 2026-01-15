@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://aminaelhasni.com/sitemap.xml
